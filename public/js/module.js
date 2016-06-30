@@ -9,4 +9,5 @@ app.config(function($stateProvider, $urlRouterProvider){
     //   templateUrl: '/html/welcome.html',
     //   controller: 'welcomeController'
     // })
+  $urlRouterProvider.otherwise('/');
 });
