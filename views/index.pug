@@ -14,6 +14,7 @@ head
   script(src="/js/controllers/mainCtrl.js")
   //- script(src="/js/services/service.js")
   
-body(ng-app='myApp')
-  h1 #{title}
-  
+body(ng-app='myApp', ng-controller='mainCtrl')
+  .container-fluid
+    h1 #{title}
+    ui-view
