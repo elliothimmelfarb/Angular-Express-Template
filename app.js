@@ -10,6 +10,14 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+let mongoose = require('mongoose');
+
+let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/_______________'; // TODO: SET MONGODB URL
+
+mongoose.connect(mongoUrl, err => {
+  console.log(err || `MongoDB connected to ${mongoUrl}`);
+});
+
 const app = express();
 const server = http.createServer(app);
 
@@ -38,7 +46,7 @@ app.use('/api', require('./routes/api'));
 ////////////////////////////////
 
 app.get('/', (req, res) => {
-  res.render('index', {title: 'Set the title in app.js get to "/"'});
+  res.render('index', {title: 'Change the title in app.js GET to "/"'});
 });
 
 // catch 404 and forward to error handler
