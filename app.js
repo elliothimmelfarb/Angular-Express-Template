@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 
 let mongoose = require('mongoose');
 
-let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/_______________'; // TODO: SET MONGODB URL
+let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/simplemyspace'; 
 
 mongoose.connect(mongoUrl, err => {
   console.log(err || `MongoDB connected to ${mongoUrl}`);
@@ -46,7 +46,7 @@ app.use('/api', require('./routes/api'));
 ////////////////////////////////
 
 app.get('/', (req, res) => {
-  res.render('index', {title: 'Change the title in app.js GET to "/"'});
+  res.render('index', {title: 'Simple Myspace'});
 });
 
 // catch 404 and forward to error handler
